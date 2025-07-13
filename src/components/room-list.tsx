@@ -8,8 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { useRooms } from '@/http/use-rooms'
 import { dayjs } from '@/utils/dayjs'
-import { useRooms } from './http/use-rooms'
 
 export function RoomList() {
   const { data, isLoading } = useRooms()
@@ -22,7 +22,7 @@ export function RoomList() {
           Acesso rápido para as salas criadas recentemente
         </CardDescription>
       </CardHeader>
-      <CardContent className='flex flex-col gap-3'>
+      <CardContent className="flex flex-col gap-3">
         {isLoading && (
           <p className="text-muted-foreground text-sm">Carregando Salas...</p>
         )}
